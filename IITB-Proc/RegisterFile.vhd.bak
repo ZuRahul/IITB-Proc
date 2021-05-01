@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity RegisterFile is
+	port (
+		addA: in std_logic_vector(2 downto 0); 
+		addB: in std_logic_vector(2 downto 0); 
+		addC: in std_logic_vector(2 downto 0); 
+		DataC: in std_logic_vector(15 downto 0); 
+		DataA: out std_logic_vector(15 downto 0);
+		DataB: out std_logic_vector(15 downto 0);
+		);
+end entity;

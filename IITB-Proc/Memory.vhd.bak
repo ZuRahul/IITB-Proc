@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Memory is
+	port (
+		addA: in std_logic_vector(5 downto 0); 
+		addB: in std_logic_vector(5 downto 0); 
+		dataB: in std_logic_vector(15 downto 0); 
+		dataA: out std_logic_vector(15 downto 0);
+		);
+end entity;
+
+architecture arch of Memory is
+
+type d2 is array (0 to 63) of std_logic_vector (15 downto 0);	--type for buffer
+signal store: d2;	--buffer
+
+begin
+	dataA <= store( to_integer(unsigned(addA)) );
+	store( to_integer(unsigned(addB)) ) <= dataB;
+end architecture;
