@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ALUTest is
+
+end entity;
+
+architecture arch of ALUTest is
+
+component ALU is
+	port (
+		opA : in std_logic_vector(15 downto 0); 
+		opB : in std_logic_vector(15 downto 0);
+		op : in std_logic;
+		output : out std_logic_vector(15 downto 0));
+end component;
+
+begin
+
+end architecture;

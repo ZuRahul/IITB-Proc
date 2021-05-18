@@ -1,0 +1,47 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY ALU_TB IS
+END ENTITY;
+
+ARCHITECTURE BEHAVIOUR OF ALU_TB IS
+
+COMPONENT ALUTest is
+	port (
+		clk, op: in std_logic;
+		opA, opB: in std_logic_vector(15 downto 0);
+		output: out std_logic_vector(15 downto 0));
+END COMPONENT;
+
+SIGNAL CLK, OP: STD_LOGIC;
+SIGNAL OPA, OPB, OUTPUT: STD_LOGIC_VECTOR(15 DOWNTO 0);
+ 
+BEGIN
+	
+	TEST_INST: ALUTest
+		PORT MAP (CLK, OP, OPA, OPB, OUTPUT);
+	
+	PROCESS
+	BEGIN
+		
+		CLK <= '0';
+		WAIT FOR 10 NS;
+		
+		CLK <= '1';
+		OPA <= "0111101100001101";
+		OPB <= "0000000000010111";
+		OP <= '1';
+		WAIT FOR 10 NS;
+		
+		CLK <= '0';
+		WAIT FOR 10 NS;
+		
+		CLK <= '1';
+		OPA <= "0000011111001001";
+		OPB <= "0111101010111010";
+		OP <= '0';
+		WAIT FOR 10 NS;
+		
+	END PROCESS;
+
+END ARCHITECTURE;

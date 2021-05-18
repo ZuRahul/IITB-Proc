@@ -1,0 +1,18 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY ALU_TB IS
+END ENTITY;
+
+ARCHITECTURE BEHAVIOUR OF ALU_TB IS
+
+COMPONENT ALUTest is
+	port (
+		clk, op: in std_logic;
+		opA, opB: in std_logic_vector(15 downto 0);
+		output: out std_logic_vector(15 downto 0));
+END COMPONENT;
+
+BEGIN
+
+END ARCHITECTURE;

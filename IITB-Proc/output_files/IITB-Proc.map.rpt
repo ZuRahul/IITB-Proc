@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-Proc
-Tue May 18 11:41:22 2021
+Tue May 18 12:26:19 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,9 +13,8 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Analysis & Synthesis Messages
 
 
 
@@ -42,12 +41,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue May 18 11:41:22 2021       ;
+; Analysis & Synthesis Status ; Successful - Tue May 18 12:26:19 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-Proc                                   ;
-; Top-level Entity Name       ; MemoryTest                                  ;
+; Top-level Entity Name       ; ALUTest                                     ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 16,664                                      ;
+; Total logic elements        ; 65                                          ;
 ; Total pins                  ; 50                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
@@ -59,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; MemoryTest         ; IITB-Proc          ;
+; Top-level entity name                                            ; ALUTest            ; IITB-Proc          ;
 ; Family name                                                      ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -140,169 +139,60 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                          ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
-; Memory.vhd                       ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd     ;         ;
-; MemoryTest.vhd                   ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; ALU.vhd                          ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd     ;         ;
+; ALUTest.vhd                      ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALUTest.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Total logic elements                        ; 16664    ;
-;     -- Combinational with no register       ; 16647    ;
-;     -- Register only                        ; 17       ;
-;     -- Combinational with a register        ; 0        ;
-;                                             ;          ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 6560     ;
-;     -- 3 input functions                    ; 10086    ;
-;     -- 2 input functions                    ; 1        ;
-;     -- 1 input functions                    ; 0        ;
-;     -- 0 input functions                    ; 0        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 16664    ;
-;     -- arithmetic mode                      ; 0        ;
-;     -- qfbk mode                            ; 0        ;
-;     -- register cascade mode                ; 0        ;
-;     -- synchronous clear/load mode          ; 0        ;
-;     -- asynchronous clear/load mode         ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 17       ;
-; I/O pins                                    ; 50       ;
-; Maximum fan-out node                        ; addIn[0] ;
-; Maximum fan-out                             ; 1589     ;
-; Total fan-out                               ; 56550    ;
-; Average fan-out                             ; 3.38     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 65    ;
+;     -- Combinational with no register       ; 32    ;
+;     -- Register only                        ; 33    ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 16    ;
+;     -- 3 input functions                    ; 15    ;
+;     -- 2 input functions                    ; 1     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 50    ;
+;     -- arithmetic mode                      ; 15    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 33    ;
+; Total logic cells in carry chains           ; 16    ;
+; I/O pins                                    ; 50    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 33    ;
+; Total fan-out                               ; 193   ;
+; Average fan-out                             ; 1.68  ;
++---------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
-+----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+-------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells   ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs  ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name     ; Entity Name ; Library Name ;
-+----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+-------------------------+-------------+--------------+
-; |MemoryTest                ; 16664 (621)   ; 17           ; 0          ; 50   ; 0            ; 16647 (604)   ; 17 (17)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MemoryTest             ; MemoryTest  ; work         ;
-;    |Memory:inst|           ; 16043 (16043) ; 0            ; 0          ; 0    ; 0            ; 16043 (16043) ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MemoryTest|Memory:inst ; Memory      ; work         ;
-+----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+-------------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |ALUTest                   ; 65 (33)     ; 33           ; 0          ; 50   ; 0            ; 32 (0)       ; 33 (33)           ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ALUTest            ; ALUTest     ; work         ;
+;    |ALU:inst|              ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |ALUTest|ALU:inst   ; ALU         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                  ;
-+-------------------------------------------------------+---------------------+------------------------+
-; Latch Name                                            ; Latch Enable Signal ; Free of Timing Hazards ;
-+-------------------------------------------------------+---------------------+------------------------+
-; Memory:inst|store~2384                                ; rtl~0               ; yes                    ;
-; Memory:inst|store~1360                                ; rtl~1               ; yes                    ;
-; Memory:inst|store~336                                 ; rtl~2               ; yes                    ;
-; Memory:inst|store~3408                                ; rtl~3               ; yes                    ;
-; Memory:inst|store~1616                                ; rtl~4               ; yes                    ;
-; Memory:inst|store~2640                                ; rtl~5               ; yes                    ;
-; Memory:inst|store~592                                 ; rtl~6               ; yes                    ;
-; Memory:inst|store~3664                                ; rtl~7               ; yes                    ;
-; Memory:inst|store~1104                                ; rtl~8               ; yes                    ;
-; Memory:inst|store~2128                                ; rtl~9               ; yes                    ;
-; Memory:inst|store~80                                  ; rtl~10              ; yes                    ;
-; Memory:inst|store~3152                                ; rtl~11              ; yes                    ;
-; Memory:inst|store~2896                                ; rtl~12              ; yes                    ;
-; Memory:inst|store~1872                                ; rtl~13              ; yes                    ;
-; Memory:inst|store~848                                 ; rtl~14              ; yes                    ;
-; Memory:inst|store~3920                                ; rtl~15              ; yes                    ;
-; Memory:inst|store~1728                                ; rtl~16              ; yes                    ;
-; Memory:inst|store~2752                                ; rtl~17              ; yes                    ;
-; Memory:inst|store~704                                 ; rtl~18              ; yes                    ;
-; Memory:inst|store~3776                                ; rtl~19              ; yes                    ;
-; Memory:inst|store~2496                                ; rtl~20              ; yes                    ;
-; Memory:inst|store~1472                                ; rtl~21              ; yes                    ;
-; Memory:inst|store~448                                 ; rtl~22              ; yes                    ;
-; Memory:inst|store~3520                                ; rtl~23              ; yes                    ;
-; Memory:inst|store~1216                                ; rtl~24              ; yes                    ;
-; Memory:inst|store~2240                                ; rtl~25              ; yes                    ;
-; Memory:inst|store~192                                 ; rtl~26              ; yes                    ;
-; Memory:inst|store~3264                                ; rtl~27              ; yes                    ;
-; Memory:inst|store~3008                                ; rtl~28              ; yes                    ;
-; Memory:inst|store~1984                                ; rtl~29              ; yes                    ;
-; Memory:inst|store~960                                 ; rtl~30              ; yes                    ;
-; Memory:inst|store~4032                                ; rtl~31              ; yes                    ;
-; Memory:inst|store~2368                                ; rtl~32              ; yes                    ;
-; Memory:inst|store~1344                                ; rtl~33              ; yes                    ;
-; Memory:inst|store~320                                 ; rtl~34              ; yes                    ;
-; Memory:inst|store~3392                                ; rtl~35              ; yes                    ;
-; Memory:inst|store~1600                                ; rtl~36              ; yes                    ;
-; Memory:inst|store~2624                                ; rtl~37              ; yes                    ;
-; Memory:inst|store~576                                 ; rtl~38              ; yes                    ;
-; Memory:inst|store~3648                                ; rtl~39              ; yes                    ;
-; Memory:inst|store~1088                                ; rtl~40              ; yes                    ;
-; Memory:inst|store~2112                                ; rtl~41              ; yes                    ;
-; Memory:inst|store~64                                  ; rtl~42              ; yes                    ;
-; Memory:inst|store~3136                                ; rtl~43              ; yes                    ;
-; Memory:inst|store~2880                                ; rtl~44              ; yes                    ;
-; Memory:inst|store~1856                                ; rtl~45              ; yes                    ;
-; Memory:inst|store~832                                 ; rtl~46              ; yes                    ;
-; Memory:inst|store~3904                                ; rtl~47              ; yes                    ;
-; Memory:inst|store~1744                                ; rtl~48              ; yes                    ;
-; Memory:inst|store~2768                                ; rtl~49              ; yes                    ;
-; Memory:inst|store~720                                 ; rtl~50              ; yes                    ;
-; Memory:inst|store~3792                                ; rtl~51              ; yes                    ;
-; Memory:inst|store~2512                                ; rtl~52              ; yes                    ;
-; Memory:inst|store~1488                                ; rtl~53              ; yes                    ;
-; Memory:inst|store~464                                 ; rtl~54              ; yes                    ;
-; Memory:inst|store~3536                                ; rtl~55              ; yes                    ;
-; Memory:inst|store~1232                                ; rtl~56              ; yes                    ;
-; Memory:inst|store~2256                                ; rtl~57              ; yes                    ;
-; Memory:inst|store~208                                 ; rtl~58              ; yes                    ;
-; Memory:inst|store~3280                                ; rtl~59              ; yes                    ;
-; Memory:inst|store~3024                                ; rtl~60              ; yes                    ;
-; Memory:inst|store~2000                                ; rtl~61              ; yes                    ;
-; Memory:inst|store~976                                 ; rtl~62              ; yes                    ;
-; Memory:inst|store~4048                                ; rtl~63              ; yes                    ;
-; Memory:inst|store~1696                                ; rtl~64              ; yes                    ;
-; Memory:inst|store~2720                                ; rtl~65              ; yes                    ;
-; Memory:inst|store~672                                 ; rtl~66              ; yes                    ;
-; Memory:inst|store~3744                                ; rtl~67              ; yes                    ;
-; Memory:inst|store~2464                                ; rtl~68              ; yes                    ;
-; Memory:inst|store~1440                                ; rtl~69              ; yes                    ;
-; Memory:inst|store~416                                 ; rtl~70              ; yes                    ;
-; Memory:inst|store~3488                                ; rtl~71              ; yes                    ;
-; Memory:inst|store~1184                                ; rtl~72              ; yes                    ;
-; Memory:inst|store~2208                                ; rtl~73              ; yes                    ;
-; Memory:inst|store~160                                 ; rtl~74              ; yes                    ;
-; Memory:inst|store~3232                                ; rtl~75              ; yes                    ;
-; Memory:inst|store~2976                                ; rtl~76              ; yes                    ;
-; Memory:inst|store~1952                                ; rtl~77              ; yes                    ;
-; Memory:inst|store~928                                 ; rtl~78              ; yes                    ;
-; Memory:inst|store~4000                                ; rtl~79              ; yes                    ;
-; Memory:inst|store~2352                                ; rtl~80              ; yes                    ;
-; Memory:inst|store~1328                                ; rtl~81              ; yes                    ;
-; Memory:inst|store~304                                 ; rtl~82              ; yes                    ;
-; Memory:inst|store~3376                                ; rtl~83              ; yes                    ;
-; Memory:inst|store~1584                                ; rtl~84              ; yes                    ;
-; Memory:inst|store~2608                                ; rtl~85              ; yes                    ;
-; Memory:inst|store~560                                 ; rtl~86              ; yes                    ;
-; Memory:inst|store~3632                                ; rtl~87              ; yes                    ;
-; Memory:inst|store~1072                                ; rtl~88              ; yes                    ;
-; Memory:inst|store~2096                                ; rtl~89              ; yes                    ;
-; Memory:inst|store~48                                  ; rtl~90              ; yes                    ;
-; Memory:inst|store~3120                                ; rtl~91              ; yes                    ;
-; Memory:inst|store~2864                                ; rtl~92              ; yes                    ;
-; Memory:inst|store~1840                                ; rtl~93              ; yes                    ;
-; Memory:inst|store~816                                 ; rtl~94              ; yes                    ;
-; Memory:inst|store~3888                                ; rtl~95              ; yes                    ;
-; Memory:inst|store~2336                                ; rtl~96              ; yes                    ;
-; Memory:inst|store~1312                                ; rtl~97              ; yes                    ;
-; Memory:inst|store~288                                 ; rtl~98              ; yes                    ;
-; Memory:inst|store~3360                                ; rtl~99              ; yes                    ;
-; Number of user-specified and inferred latches = 9600  ;                     ;                        ;
-+-------------------------------------------------------+---------------------+------------------------+
-Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -310,7 +200,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
+; Total registers                              ; 33    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -326,7 +216,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue May 18 11:41:07 2021
+    Info: Processing started: Tue May 18 12:26:11 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-Proc -c IITB-Proc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -348,29 +238,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file RFTest.
 Info (12021): Found 2 design units, including 1 entities, in source file MemoryTest.vhd
     Info (12022): Found design unit 1: MemoryTest-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 12
     Info (12023): Found entity 1: MemoryTest File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file Memory_TB.vhd
-    Info (12022): Found design unit 1: MEMORY_TB-BEHAVIOUR File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory_TB.vhd Line: 7
-    Info (12023): Found entity 1: MEMORY_TB File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory_TB.vhd Line: 4
-Info (12127): Elaborating entity "MemoryTest" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at MemoryTest.vhd(36): signal "addIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 36
-Warning (10492): VHDL Process Statement warning at MemoryTest.vhd(37): signal "dataB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 37
-Info (12128): Elaborating entity "Memory" for hierarchy "Memory:inst" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 27
-Warning (10492): VHDL Process Statement warning at Memory.vhd(23): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd Line: 23
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "addIn[10]" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 8
-    Warning (15610): No output dependent on input pin "addIn[11]" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 8
-    Warning (15610): No output dependent on input pin "addIn[12]" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 8
-    Warning (15610): No output dependent on input pin "addIn[13]" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 8
-    Warning (15610): No output dependent on input pin "addIn[14]" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 8
-    Warning (15610): No output dependent on input pin "addIn[15]" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/MemoryTest.vhd Line: 8
-Info (21057): Implemented 16714 device resources after synthesis - the final resource count might be different
+Info (12021): Found 2 design units, including 1 entities, in source file ALUTest.vhd
+    Info (12022): Found design unit 1: ALUTest-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALUTest.vhd Line: 12
+    Info (12023): Found entity 1: ALUTest File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALUTest.vhd Line: 5
+Info (12127): Elaborating entity "ALUTest" for the top level hierarchy
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALUTest.vhd Line: 27
+Info (21057): Implemented 115 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 34 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 16664 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 416 megabytes
-    Info: Processing ended: Tue May 18 11:41:22 2021
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:30
+    Info (21061): Implemented 65 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 402 megabytes
+    Info: Processing ended: Tue May 18 12:26:19 2021
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:23
 
 

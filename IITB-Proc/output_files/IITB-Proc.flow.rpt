@@ -1,5 +1,5 @@
 Flow report for IITB-Proc
-Tue May 18 11:41:22 2021
+Tue May 18 12:26:19 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,12 +41,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Tue May 18 11:41:22 2021       ;
+; Flow Status           ; Successful - Tue May 18 12:26:19 2021       ;
 ; Quartus Prime Version ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name         ; IITB-Proc                                   ;
-; Top-level Entity Name ; MemoryTest                                  ;
+; Top-level Entity Name ; ALUTest                                     ;
 ; Family                ; MAX V                                       ;
-; Total logic elements  ; 16,664                                      ;
+; Total logic elements  ; 65                                          ;
 ; Total pins            ; 50                                          ;
 ; Total virtual pins    ; 0                                           ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                               ;
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/18/2021 11:41:07 ;
+; Start date & time ; 05/18/2021 12:26:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; IITB-Proc           ;
 +-------------------+---------------------+
@@ -69,22 +69,22 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+--------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+--------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 35704466501152.162131826712163 ; --            ; --          ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; TEST_INST                      ; --            ; --          ; RF_TB.vhd                         ;
+; COMPILER_SIGNATURE_ID                ; 35704466501152.162132097112752 ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; TEST_INST                      ; --            ; --          ; Memory_TB.vhd                     ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                            ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                            ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                            ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                            ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; RF_TB.vhd                      ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Memory_TB.vhd                  ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                           ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)         ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; RF_TB.vhd                      ; --            ; --          ; RF_TB.vhd                         ;
-; EDA_TEST_BENCH_MODULE_NAME           ; RF_TB                          ; --            ; --          ; RF_TB.vhd                         ;
-; EDA_TEST_BENCH_NAME                  ; RF_TB.vhd                      ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; Memory_TB.vhd                  ; --            ; --          ; Memory_TB.vhd                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Memory_TB                      ; --            ; --          ; Memory_TB.vhd                     ;
+; EDA_TEST_BENCH_NAME                  ; Memory_TB.vhd                  ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                           ; --            ; --          ; eda_simulation                    ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                   ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; MemoryTest                     ; IITB-Proc     ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; ALUTest                        ; IITB-Proc     ; --          ; --                                ;
 +--------------------------------------+--------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -93,8 +93,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 416 MB              ; 00:00:30                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:30                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 402 MB              ; 00:00:23                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:23                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
