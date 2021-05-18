@@ -108,9 +108,9 @@ begin
 				if (IR(14)='0') then
 					state <= 18;
 				elsif (IR(12)='1') then
-					state <= 19;
+					state <= 19; --SA
 				else
-					state <= 27;
+					state <= 27; --LA
 				end if;
 				PC <= ALUout;
 			
