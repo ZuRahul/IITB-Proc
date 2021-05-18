@@ -1,0 +1,138 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/simulation/modelsim
+Eregisterfile
+Z1 w1621308550
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd
+Z6 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd
+l0
+L5 1
+VVYPkZWeddK43@6<ZL5LC@0
+!s100 CmP51jQbD3HmgPo_bm0?C3
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1621316613
+!i10b 1
+Z9 !s108 1621316613.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd|
+Z11 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+R4
+DEx4 work 12 registerfile 0 22 VYPkZWeddK43@6<ZL5LC@0
+!i122 0
+l21
+L16 15
+VhM87>^_UV]9D0Dk^9^NRF0
+!s100 TIOg06FgPeA`=Wo]NIa:A3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Erf_tb
+Z14 w1621316603
+R3
+R4
+!i122 2
+R0
+Z15 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RF_TB.vhd
+Z16 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RF_TB.vhd
+l0
+L4 1
+VYP=Ln8Pf:j5Xi64JWGXTn3
+!s100 jHLPh`LVM@f@OdAc`d8R01
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RF_TB.vhd|
+!s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RF_TB.vhd|
+!i113 1
+R12
+R13
+Abehaviour
+R3
+R4
+DEx4 work 5 rf_tb 0 22 YP=Ln8Pf:j5Xi64JWGXTn3
+!i122 2
+l22
+L7 44
+VG]G]g_OfB[CB3ec75GSAB2
+!s100 ck9n2H2N>647POfoIde^D0
+R7
+31
+R8
+!i10b 1
+R9
+R17
+Z18 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RF_TB.vhd|
+!i113 1
+R12
+R13
+Erftest
+Z19 w1621316483
+R2
+R3
+R4
+!i122 1
+R0
+Z20 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd
+Z21 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd
+l0
+L5 1
+V=Lk``5]>kPlglWfWmZ6Do1
+!s100 Y20h^ZCe^mI^LZzNKfUIb3
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd|
+Z23 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+R4
+DEx4 work 6 rftest 0 22 =Lk``5]>kPlglWfWmZ6Do1
+!i122 1
+l30
+L13 34
+V_XPH0BGZ7]z6JIQCTkC?K1
+!s100 KKEKk6dj@DH7KclHYnDQ03
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13

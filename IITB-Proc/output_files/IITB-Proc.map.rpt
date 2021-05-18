@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-Proc
-Sat May  1 22:15:16 2021
+Tue May 18 11:11:35 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,8 +13,10 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "RegisterFile:inst"
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat May  1 22:15:16 2021       ;
+; Analysis & Synthesis Status ; Successful - Tue May 18 11:11:35 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-Proc                                   ;
-; Top-level Entity Name       ; IITBProc                                    ;
+; Top-level Entity Name       ; RFTest                                      ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 0                                           ;
-; Total pins                  ; 1                                           ;
+; Total logic elements        ; 216                                         ;
+; Total pins                  ; 40                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -58,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; IITBProc           ; IITB-Proc          ;
+; Top-level entity name                                            ; RFTest             ; IITB-Proc          ;
 ; Family name                                                      ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -139,16 +141,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; RegisterFile.vhd                 ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/IITB-Proc/RegisterFile.vhd ;         ;
-; Memory.vhd                       ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/IITB-Proc/Memory.vhd       ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/IITB-Proc/ALU.vhd          ;         ;
-; IITBProc.vhd                     ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd     ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; RegisterFile.vhd                 ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd ;         ;
+; RFTest.vhd                       ; yes             ; User VHDL File  ; /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd       ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -156,39 +156,56 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 0     ;
-;     -- Combinational with no register       ; 0     ;
-;     -- Register only                        ; 0     ;
+; Total logic elements                        ; 216   ;
+;     -- Combinational with no register       ; 88    ;
+;     -- Register only                        ; 128   ;
 ;     -- Combinational with a register        ; 0     ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 72    ;
+;     -- 3 input functions                    ; 16    ;
 ;     -- 2 input functions                    ; 0     ;
 ;     -- 1 input functions                    ; 0     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
+;     -- normal mode                          ; 216   ;
 ;     -- arithmetic mode                      ; 0     ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 0     ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 1     ;
+; Total registers                             ; 128   ;
+; I/O pins                                    ; 40    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 128   ;
+; Total fan-out                               ; 736   ;
+; Average fan-out                             ; 2.88  ;
 +---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; |IITBProc                  ; 0 (0)       ; 0            ; 0          ; 1    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc           ; IITBProc    ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name       ; Entity Name  ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------+--------------+--------------+
+; |RFTest                    ; 216 (0)     ; 128          ; 0          ; 40   ; 0            ; 88 (0)       ; 128 (0)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |RFTest                   ; RFTest       ; work         ;
+;    |RegisterFile:inst|     ; 216 (216)   ; 128          ; 0          ; 0    ; 0            ; 88 (88)      ; 128 (128)         ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |RFTest|RegisterFile:inst ; RegisterFile ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; dataC[0..15]                           ; Lost fanout        ;
+; wr                                     ; Lost fanout        ;
+; addC[0..2]                             ; Lost fanout        ;
+; Total Number of Removed Registers = 20 ;                    ;
++----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -196,14 +213,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 128   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 128   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RegisterFile:inst"                                                                   ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; datab ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -212,38 +238,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat May  1 22:15:08 2021
+    Info: Processing started: Tue May 18 11:11:27 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-Proc -c IITB-Proc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file RegisterFile.vhd
-    Info (12022): Found design unit 1: RegisterFile-arch File: /home/burixzura/acads/CS 254/Project/IITB-Proc/RegisterFile.vhd Line: 16
-    Info (12023): Found entity 1: RegisterFile File: /home/burixzura/acads/CS 254/Project/IITB-Proc/RegisterFile.vhd Line: 5
+    Info (12022): Found design unit 1: RegisterFile-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 16
+    Info (12023): Found entity 1: RegisterFile File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file Memory.vhd
-    Info (12022): Found design unit 1: Memory-arch File: /home/burixzura/acads/CS 254/Project/IITB-Proc/Memory.vhd Line: 13
-    Info (12023): Found entity 1: Memory File: /home/burixzura/acads/CS 254/Project/IITB-Proc/Memory.vhd Line: 5
+    Info (12022): Found design unit 1: Memory-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd Line: 13
+    Info (12023): Found entity 1: Memory File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
-    Info (12022): Found design unit 1: ALU-arch File: /home/burixzura/acads/CS 254/Project/IITB-Proc/ALU.vhd Line: 13
-    Info (12023): Found entity 1: ALU File: /home/burixzura/acads/CS 254/Project/IITB-Proc/ALU.vhd Line: 5
+    Info (12022): Found design unit 1: ALU-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd Line: 13
+    Info (12023): Found entity 1: ALU File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file IITBProc.vhd
-    Info (12022): Found design unit 1: IITBProc-arch File: /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd Line: 9
-    Info (12023): Found entity 1: IITBProc File: /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd Line: 5
-Info (12127): Elaborating entity "IITBProc" for the top level hierarchy
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic" File: /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd Line: 46
-Info (12128): Elaborating entity "Memory" for hierarchy "Memory:RAM" File: /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd Line: 49
-Warning (10492): VHDL Process Statement warning at Memory.vhd(23): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/IITB-Proc/Memory.vhd Line: 23
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Registers" File: /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(24): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/IITB-Proc/RegisterFile.vhd Line: 24
-Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(25): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/IITB-Proc/RegisterFile.vhd Line: 25
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: /home/burixzura/acads/CS 254/Project/IITB-Proc/IITBProc.vhd Line: 6
-Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 401 megabytes
-    Info: Processing ended: Sat May  1 22:15:16 2021
+    Info (12022): Found design unit 1: IITBProc-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 9
+    Info (12023): Found entity 1: IITBProc File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file RFTest.vhd
+    Info (12022): Found design unit 1: RFTest-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 13
+    Info (12023): Found entity 1: RFTest File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 5
+Info (12127): Elaborating entity "RFTest" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at RFTest.vhd(27): used implicit default value for signal "addB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at RFTest.vhd(28): object "dataB" assigned a value but never read File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at RFTest.vhd(42): signal "addOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at RFTest.vhd(43): signal "dataA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 43
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:inst" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(24): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(25): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 25
+Info (17049): 20 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 256 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 216 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 399 megabytes
+    Info: Processing ended: Tue May 18 11:11:35 2021
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:23
 
 
