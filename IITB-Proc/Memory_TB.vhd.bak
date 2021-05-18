@@ -1,28 +1,26 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY RF_TB IS
-END RF_TB;
+ENTITY MEMORY_TB IS
+END MEMORY_TB;
 
-ARCHITECTURE BEHAVIOUR OF RF_TB IS
+ARCHITECTURE BEHAVIOUR OF MEMORY_TB IS
 
-COMPONENT RFTest is
+COMPONENT MemoryTest is
 	port (
 		clk, wrt: in std_logic;
-		addIn, addOut: in std_logic_vector(2 downto 0);
-		dataIn: in std_logic_vector(15 downto 0);
+		addIn, dataIn: in std_logic_vector(15 downto 0);
 		dataOut: out std_logic_vector(15 downto 0));
 		
 end COMPONENT;
 
 SIGNAL CLK, WRT : STD_LOGIC := '0';
-SIGNAL ADDIN, ADDOUT: STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL DATAIN, DATAOUT: STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL ADDIN, DATAIN, DATAOUT: STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 BEGIN
 
-	TEST_INST: RFTest
-		PORT MAP (CLK, WRT, ADDIN, ADDOUT, DATAIN, DATAOUT);
+	TEST_INST: MemoryTest
+		PORT MAP (CLK, WRT, ADDIN, DATAIN, DATAOUT);
 		
 	PROCESS
 	

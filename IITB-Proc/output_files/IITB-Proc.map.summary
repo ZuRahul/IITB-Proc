@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Tue May 18 11:11:35 2021
+Analysis & Synthesis Status : Successful - Tue May 18 11:41:22 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : IITB-Proc
-Top-level Entity Name : RFTest
+Top-level Entity Name : MemoryTest
 Family : MAX V
-Total logic elements : 216
-Total pins : 40
+Total logic elements : 16,664
+Total pins : 50
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

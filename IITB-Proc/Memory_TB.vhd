@@ -1,0 +1,47 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY MEMORY_TB IS
+END MEMORY_TB;
+
+ARCHITECTURE BEHAVIOUR OF MEMORY_TB IS
+
+COMPONENT MemoryTest is
+	port (
+		clk, wrt: in std_logic;
+		addIn, dataIn: in std_logic_vector(15 downto 0);
+		dataOut: out std_logic_vector(15 downto 0));
+		
+end COMPONENT;
+
+SIGNAL CLK, WRT : STD_LOGIC := '0';
+SIGNAL ADDIN, DATAIN, DATAOUT: STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+BEGIN
+
+	TEST_INST: MemoryTest
+		PORT MAP (CLK, WRT, ADDIN, DATAIN, DATAOUT);
+		
+	PROCESS
+	
+	BEGIN
+		
+		CLK <= '0';
+		WAIT FOR 100 NS;
+		
+		CLK<= '1';
+		WRT <= '1';
+		ADDIN <= "0000000010000010";
+		DATAIN <= "1000100010001000";
+		WAIT FOR 100 NS;
+		
+		CLK <= '0';
+		WAIT FOR 100 NS;
+		
+		CLK <= '1';
+		WRT <= '0';
+		WAIT FOR 100 NS;
+		
+	END PROCESS;
+
+END ARCHITECTURE; 
