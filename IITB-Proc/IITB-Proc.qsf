@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY ALUTest
+set_global_assignment -name TOP_LEVEL_ENTITY IITBProc
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:17:51  APRIL 30, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
