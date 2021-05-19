@@ -83,6 +83,8 @@ begin
 						state <= 2; --R
 					elsif (IR(15 downto 12)="0011") or (IR(15 downto 12)="0110") or (IR(15 downto 12)="0111") then
 						state <= 4; --J
+					elsif (IR="1111111111111111") then
+						state <= 36; --Trap
 					else
 						state <= 3; --I
 					end if;
@@ -264,6 +266,9 @@ begin
 					else
 						state <= state+1;
 					end if;
+				
+				else
+					
 				
 				end if;
 			

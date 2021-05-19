@@ -1,0 +1,41 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity LoadTest is
+	port( 
+		clk, load: in std_logic;
+		DataIn: in std_logic_vector(15 downto 0);
+		DataOut: out std_logic_vector(15 downto 0));
+end entity;
+
+architecture arch of LoadTest is
+
+component Memory is
+	port (
+		WR: in std_logic;
+		addr: in std_logic_vector(15 downto 0); 
+		dataIn: in std_logic_vector(15 downto 0); 
+		dataOut: out std_logic_vector(15 downto 0));
+end component;
+
+signal MemWr: std_logic;
+signal MemAddr, MemDataIn: std_logic_vector(15 downto 0) := "0000000000000000";
+
+begin
+
+	RAM: Memory
+		port map (MemWR,MemAddr,MemDataIn,DataOut);
+
+	process(clk)
+		variable loadAddr: std_logic_vector(15 downto 0) := "0000000000000000";
+	begin
+		if (rising_edge(clk)) then
+			MemWR <= '1';
+			MemAddr <= loadAddr;
+			MemDataIn <= DataIn;
+			--loadAddr := std_logic_vector( to_signed( to_integer(signed(loadAddr)) + 1, loadAddr'length ) );
+		end if;
+	end process;
+
+end architecture;

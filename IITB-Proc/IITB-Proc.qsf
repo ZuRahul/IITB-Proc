@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY IITBProc
+set_global_assignment -name TOP_LEVEL_ENTITY LoadTest
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:17:51  APRIL 30, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -57,14 +57,23 @@ set_global_assignment -name VHDL_FILE ALU.vhd
 set_global_assignment -name VHDL_FILE IITBProc.vhd
 set_global_assignment -name VHDL_FILE RFTest.vhd
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH ALU_TB.vhd -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH LOAD_TB.vhd -section_id eda_simulation
 set_global_assignment -name VHDL_FILE MemoryTest.vhd
 set_global_assignment -name EDA_TEST_BENCH_NAME Memory_TB.vhd -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME TEST_INST -section_id Memory_TB.vhd
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Memory_TB -section_id Memory_TB.vhd
 set_global_assignment -name VHDL_FILE ALUTest.vhd
-set_global_assignment -name EDA_TEST_BENCH_FILE Memory_TB.vhd -section_id Memory_TB.vhd
 set_global_assignment -name EDA_TEST_BENCH_NAME ALU_TB.vhd -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME TEST_INST -section_id ALU_TB.vhd
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ALU_TB -section_id ALU_TB.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME TESTBENCH.vhd -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME CPU_INST -section_id TESTBENCH.vhd
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TESTBENCH -section_id TESTBENCH.vhd
+set_global_assignment -name VHDL_FILE LoadTest.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME LOAD_TB.vhd -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME LOAD_INST -section_id LOAD_TB.vhd
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME LOAD_TB -section_id LOAD_TB.vhd
+set_global_assignment -name EDA_TEST_BENCH_FILE Memory_TB.vhd -section_id Memory_TB.vhd
 set_global_assignment -name EDA_TEST_BENCH_FILE ALU_TB.vhd -section_id ALU_TB.vhd
+set_global_assignment -name EDA_TEST_BENCH_FILE TESTBENCH.vhd -section_id TESTBENCH.vhd
+set_global_assignment -name EDA_TEST_BENCH_FILE LOAD_TB.vhd -section_id LOAD_TB.vhd

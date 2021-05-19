@@ -3,24 +3,25 @@ USE IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_TEXTIO.all;
 use STD.TEXTIO.all;
 
-ENTITY TESTBENCH IS
+ENTITY LOAD_TB IS
 END ENTITY;
 
-ARCHITECTURE BEHAVIOUR OF TESTBENCH IS
+ARCHITECTURE BEHAVIOUR OF LOAD_TB IS
 
-COMPONENT IITBProc is
+COMPONENT LoadTest is
 	port( 
 		clk, load: in std_logic;
-		DataIn: in std_logic_vector (15 downto 0));
+		DataIn: in std_logic_vector (15 downto 0);
+		DataOut: out std_logic_vector (15 downto 0));
 END COMPONENT;
 
 SIGNAL CLK, LOAD: STD_LOGIC;
-SIGNAL DATAIN: STD_LOGIC_VECTOR (15 DOWNTO 0);
+SIGNAL DATAIN, DATAOUT: STD_LOGIC_VECTOR (15 DOWNTO 0);
 
 BEGIN
 
-	CPU_INST: IITBProc
-		PORT MAP (CLK, LOAD, DATAIN);
+	LOAD_INST: LoadTest
+		PORT MAP (CLK, LOAD, DATAIN, DATAOUT);
 	
 	PROCESS
 		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/instructions.txt";
