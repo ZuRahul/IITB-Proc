@@ -76,7 +76,6 @@ begin
 					MemWR <= '0';
 					RegWR <= '0';
 					MemAddr <= PC;
-					IR <= MemDataOut;
 					op <= '1';
 					opA <= "0000000000000001";
 					opB <= PC;
@@ -84,11 +83,12 @@ begin
 				
 				
 				elsif (state=1) then
-					if (IR(15 downto 12)="0000") or (IR(15 downto 12)="0010") then
+					IR <= MemDataOut;
+					if (MemDataOut(15 downto 12)="0000") or (MemDataOut(15 downto 12)="0010") then
 						state <= 2; --R
-					elsif (IR(15 downto 12)="0011") or (IR(15 downto 12)="0110") or (IR(15 downto 12)="0111") then
+					elsif (MemDataOut(15 downto 12)="0011") or (MemDataOut(15 downto 12)="0110") or (MemDataOut(15 downto 12)="0111") then
 						state <= 4; --J
-					elsif (IR="1111111111111111") then
+					elsif (MemDataOut="1111111111111111") then
 						state <= 36; --Trap
 					else
 						state <= 3; --I

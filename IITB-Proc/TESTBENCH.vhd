@@ -28,7 +28,7 @@ BEGIN
 		PORT MAP (CLK, LOAD, DATAIN, INTERFACE, TRAP);
 	
 	PROCESS
-		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/instructions.txt";
+		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/instructions/add.txt";
 		VARIABLE INPUT_LINE: LINE;
 		VARIABLE INPUT_VAR: STD_LOGIC_VECTOR (15 DOWNTO 0);
 		VARIABLE INIT: STD_LOGIC := '0';
@@ -41,28 +41,28 @@ BEGIN
 				IF (I=0) THEN
 					WHILE NOT ENDFILE(INPUT_FILE) LOOP
 						CLK <= '0';
-						WAIT FOR 10 NS;
+						WAIT FOR 50 NS;
 						CLK <= '1';
 						READLINE(INPUT_FILE, INPUT_LINE);
 						READ(INPUT_LINE, INPUT_VAR);
 						DATAIN <= INPUT_VAR;
-						WAIT FOR 10 NS;
+						WAIT FOR 50 NS;
 					END LOOP;
 				ELSE
 					CLK <= '0';
-					WAIT FOR 10 NS;
+					WAIT FOR 50 NS;
 					CLK <= '1';
 					DATAIN <= "1111111111111111";
-					WAIT FOR 10 NS;
+					WAIT FOR 50 NS;
 				END IF;
 			END LOOP;
 			INIT:='1';
 		ELSE
 			LOAD <= '0';
 			CLK <= '0';
-			WAIT FOR 10 NS;
+			WAIT FOR 50 NS;
 			CLK <= '1';
-			WAIT FOR 10 NS;
+			WAIT FOR 50 NS;
 			IF (TRAP='1') THEN
 				WAIT;
 			END IF;
