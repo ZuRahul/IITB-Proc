@@ -100,9 +100,9 @@ begin
 					addB <= IR(8 downto 6);
 					addC <= IR(5 downto 3);
 					if (IR(13)='1') then
-						state <= 6;
+						state <= 6; --Nand
 					else
-						state <= 5;
+						state <= 5; --And
 					end if;
 					PC <= ALUout;
 		
