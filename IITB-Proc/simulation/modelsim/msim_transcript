@@ -11,7 +11,7 @@
 # 
 # vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 17:28:47 on May 19,2021
+# Start time: 19:53:35 on May 20,2021
 # vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -19,61 +19,109 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Memory
 # -- Compiling architecture arch of Memory
-# End time: 17:28:47 on May 19,2021, Elapsed time: 0:00:00
+# End time: 19:53:35 on May 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/LoadTest.vhd}
+# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 17:28:47 on May 19,2021
-# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/LoadTest.vhd 
+# Start time: 19:53:35 on May 20,2021
+# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity LoadTest
-# -- Compiling architecture arch of LoadTest
-# End time: 17:28:47 on May 19,2021, Elapsed time: 0:00:00
+# -- Compiling entity ALU
+# -- Compiling architecture arch of ALU
+# End time: 19:53:35 on May 20,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/utilities.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:53:35 on May 20,2021
+# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/utilities.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package utilities
+# End time: 19:53:35 on May 20,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:53:35 on May 20,2021
+# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package utilities
+# -- Compiling entity RegisterFile
+# -- Compiling architecture arch of RegisterFile
+# End time: 19:53:35 on May 20,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:53:35 on May 20,2021
+# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package utilities
+# -- Compiling entity IITBProc
+# -- Compiling architecture arch of IITBProc
+# End time: 19:53:35 on May 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/LOAD_TB.vhd}
+# vcom -93 -work work {/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 17:28:47 on May 19,2021
-# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/LOAD_TB.vhd 
+# Start time: 19:53:35 on May 20,2021
+# vcom -reportprogress 300 -93 -work work /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package std_logic_textio
-# -- Compiling entity LOAD_TB
-# -- Compiling architecture BEHAVIOUR of LOAD_TB
-# End time: 17:28:47 on May 19,2021, Elapsed time: 0:00:00
+# -- Loading package NUMERIC_STD
+# -- Loading package utilities
+# -- Compiling entity TESTBENCH
+# -- Compiling architecture BEHAVIOUR of TESTBENCH
+# End time: 19:53:35 on May 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  LOAD_TB
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" LOAD_TB 
-# Start time: 17:28:47 on May 19,2021
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  TESTBENCH
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" TESTBENCH 
+# Start time: 19:53:35 on May 20,2021
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_textio(body)
-# Loading work.load_tb(behaviour)
 # Loading ieee.numeric_std(body)
-# Loading work.loadtest(arch)
+# Loading work.utilities
+# Loading work.testbench(behaviour)
+# Loading work.iitbproc(arch)
+# Loading work.alu(arch)
 # Loading work.memory(arch)
+# Loading work.registerfile(arch)
 # 
 # add wave *
-# Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
-# Cannot lock WLF file: "vsim.wlf"
-#           errno 11: Resource temporarily unavailable.
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: burixzura  Hostname: HP-ENVY-Laptop-13-ah0xxx  ProcessID: 5257
-#           Attempting to use alternate WLF file "./wlft0Pnigs".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0Pnigs
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# End time: 17:29:21 on May 19,2021, Elapsed time: 0:00:34
-# Errors: 0, Warnings: 2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 170 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 170 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 190 ns  Iteration: 2  Instance: /testbench/CPU_INST/Arithmetic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 210 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 210 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 210 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 250 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 250 ns  Iteration: 2  Instance: /testbench/CPU_INST/Registers
+# End time: 19:54:43 on May 20,2021, Elapsed time: 0:01:08
+# Errors: 0, Warnings: 8

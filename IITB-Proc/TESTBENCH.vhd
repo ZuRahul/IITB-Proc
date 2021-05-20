@@ -3,6 +3,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_TEXTIO.all;
 use STD.TEXTIO.all;
 
+USE WORK.UTILITIES.ALL;
+
 ENTITY TESTBENCH IS
 END ENTITY;
 
@@ -11,16 +13,19 @@ ARCHITECTURE BEHAVIOUR OF TESTBENCH IS
 COMPONENT IITBProc is
 	port( 
 		clk, load: in std_logic;
-		DataIn: in std_logic_vector (15 downto 0));
+		DataIn: in std_logic_vector (15 downto 0);
+		Interface: out d2;
+		Trap: out std_logic);
 END COMPONENT;
 
-SIGNAL CLK, LOAD: STD_LOGIC;
+SIGNAL CLK, LOAD, TRAP: STD_LOGIC;
 SIGNAL DATAIN: STD_LOGIC_VECTOR (15 DOWNTO 0);
+SIGNAL INTERFACE: d2;
 
 BEGIN
 
 	CPU_INST: IITBProc
-		PORT MAP (CLK, LOAD, DATAIN);
+		PORT MAP (CLK, LOAD, DATAIN, INTERFACE, TRAP);
 	
 	PROCESS
 		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/instructions.txt";
@@ -53,12 +58,14 @@ BEGIN
 			END LOOP;
 			INIT:='1';
 		ELSE
-			WAIT;
 			LOAD <= '0';
 			CLK <= '0';
 			WAIT FOR 10 NS;
 			CLK <= '1';
 			WAIT FOR 10 NS;
+			IF (TRAP='1') THEN
+				WAIT;
+			END IF;
 		END IF;
 		
 	END PROCESS;

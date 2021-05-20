@@ -2,10 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+use work.utilities.all;
+
 entity IITBProc is
 	port( 
 		clk, load: in std_logic;
-		DataIn: in std_logic_vector(15 downto 0));
+		DataIn: in std_logic_vector(15 downto 0);
+		Interface: out d2; 
+		Trap: out std_logic := '0');
 end entity;
 
 architecture arch of IITBProc is
@@ -18,7 +22,8 @@ component RegisterFile is
 		addC: in std_logic_vector(2 downto 0); 
 		dataC: in std_logic_vector(15 downto 0); 
 		dataA: out std_logic_vector(15 downto 0);
-		dataB: out std_logic_vector(15 downto 0));
+		dataB: out std_logic_vector(15 downto 0);
+		Interface: out d2 );
 end component;
 
 component Memory is
@@ -52,7 +57,7 @@ begin
 		port map (MemWR,MemAddr,MemDataIn,MemDataOut);
 	
 	Registers: RegisterFile
-		port map (RegWR,addA,addB,addC,DataC,DataA,DataB);
+		port map (RegWR,addA,addB,addC,DataC,DataA,DataB,Interface);
 
 	process(clk)
 		variable loadAddr: std_logic_vector(15 downto 0) := "0000000000000000";
@@ -267,8 +272,8 @@ begin
 						state <= state+1;
 					end if;
 				
-				else
-					
+				else			--Trap
+					Trap <= '1';
 				
 				end if;
 			
