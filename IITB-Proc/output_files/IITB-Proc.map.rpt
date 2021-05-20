@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-Proc
-Thu May 20 23:34:42 2021
+Fri May 21 00:39:19 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,12 +44,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu May 20 23:34:42 2021       ;
+; Analysis & Synthesis Status ; Successful - Fri May 21 00:39:19 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-Proc                                   ;
 ; Top-level Entity Name       ; IITBProc                                    ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 17,407                                      ;
+; Total logic elements        ; 17,411                                      ;
 ; Total pins                  ; 147                                         ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
@@ -160,20 +160,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Total logic elements                        ; 17407      ;
-;     -- Combinational with no register       ; 17272      ;
+; Total logic elements                        ; 17411      ;
+;     -- Combinational with no register       ; 17276      ;
 ;     -- Register only                        ; 20         ;
 ;     -- Combinational with a register        ; 115        ;
 ;                                             ;            ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 6980       ;
-;     -- 3 input functions                    ; 10361      ;
-;     -- 2 input functions                    ; 45         ;
+;     -- 4 input functions                    ; 6979       ;
+;     -- 3 input functions                    ; 10365      ;
+;     -- 2 input functions                    ; 46         ;
 ;     -- 1 input functions                    ; 1          ;
 ;     -- 0 input functions                    ; 0          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 17369      ;
+;     -- normal mode                          ; 17373      ;
 ;     -- arithmetic mode                      ; 38         ;
 ;     -- qfbk mode                            ; 0          ;
 ;     -- register cascade mode                ; 0          ;
@@ -185,7 +185,7 @@ https://fpgasoftware.intel.com/eula.
 ; I/O pins                                    ; 147        ;
 ; Maximum fan-out node                        ; MemAddr[0] ;
 ; Maximum fan-out                             ; 1589       ;
-; Total fan-out                               ; 59593      ;
+; Total fan-out                               ; 59603      ;
 ; Average fan-out                             ; 3.39       ;
 +---------------------------------------------+------------+
 
@@ -195,7 +195,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node  ; Logic Cells   ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs  ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
-; |IITBProc                   ; 17407 (1036)  ; 135          ; 0          ; 147  ; 0            ; 17272 (901)   ; 20 (20)           ; 115 (115)        ; 41 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
+; |IITBProc                   ; 17411 (1040)  ; 135          ; 0          ; 147  ; 0            ; 17276 (905)   ; 20 (20)           ; 115 (115)        ; 41 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
 ;    |ALU:Arithmetic|         ; 32 (32)       ; 0            ; 0          ; 0    ; 0            ; 32 (32)       ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |IITBProc|ALU:Arithmetic         ; ALU          ; work         ;
 ;    |Memory:RAM|             ; 16043 (16043) ; 0            ; 0          ; 0    ; 0            ; 16043 (16043) ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|Memory:RAM             ; Memory       ; work         ;
 ;    |RegisterFile:Registers| ; 296 (296)     ; 0            ; 0          ; 0    ; 0            ; 296 (296)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|RegisterFile:Registers ; RegisterFile ; work         ;
@@ -365,7 +365,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu May 20 23:34:25 2021
+    Info: Processing started: Fri May 21 00:39:01 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-Proc -c IITB-Proc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -532,14 +532,14 @@ Info (10041): Inferred latch for "store[0][13]" at RegisterFile.vhd(26) File: /h
 Info (10041): Inferred latch for "store[0][14]" at RegisterFile.vhd(26) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 26
 Info (10041): Inferred latch for "store[0][15]" at RegisterFile.vhd(26) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 26
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 17554 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 17558 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 129 output pins
-    Info (21061): Implemented 17407 logic cells
+    Info (21061): Implemented 17411 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 422 megabytes
-    Info: Processing ended: Thu May 20 23:34:42 2021
-    Info: Elapsed time: 00:00:17
+    Info: Peak virtual memory: 424 megabytes
+    Info: Processing ended: Fri May 21 00:39:19 2021
+    Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:32
 
 

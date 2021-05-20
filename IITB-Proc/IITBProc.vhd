@@ -86,7 +86,7 @@ begin
 					IR <= MemDataOut;
 					if (MemDataOut(15 downto 12)="0000") or (MemDataOut(15 downto 12)="0010") then
 						state <= 2; --R
-					elsif (MemDataOut(15 downto 12)="0011") or (MemDataOut(15 downto 12)="0110") or (MemDataOut(15 downto 12)="0111") then
+					elsif (MemDataOut(15 downto 12)="0011") or (MemDataOut(15 downto 12)="0110") or (MemDataOut(15 downto 12)="0111") or (MemDataOut(15 downto 12)="1000") then
 						state <= 4; --J
 					elsif (MemDataOut="1111111111111111") then
 						state <= 36; --Trap
