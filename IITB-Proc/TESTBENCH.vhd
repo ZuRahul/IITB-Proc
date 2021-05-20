@@ -28,7 +28,7 @@ BEGIN
 		PORT MAP (CLK, LOAD, DATAIN, INTERFACE, TRAP);
 	
 	PROCESS
-		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/instructions/nand.txt";
+		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/instructions/addImm.txt";
 		VARIABLE INPUT_LINE: LINE;
 		VARIABLE INPUT_VAR: STD_LOGIC_VECTOR (15 DOWNTO 0);
 		VARIABLE INIT: STD_LOGIC := '0';

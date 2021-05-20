@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Thu May 20 21:36:59 2021
+Analysis & Synthesis Status : Successful - Thu May 20 22:12:09 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : IITB-Proc
 Top-level Entity Name : IITBProc
 Family : MAX V
-Total logic elements : 17,340
+Total logic elements : 17,339
 Total pins : 147
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

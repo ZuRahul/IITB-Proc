@@ -111,7 +111,7 @@ begin
 					addA <= IR(11 downto 9);
 					addB <= IR(8 downto 6);
 					if (IR(15 downto 14)="00") then
-						state <= 8;
+						state <= 8;	--Add Immediate
 					elsif (IR(15 downto 14)="01") then
 						state <= 9;
 					else
@@ -154,8 +154,8 @@ begin
 				elsif (state=8) then --Add Immediate
 					PC <= ALUout;
 					opB <= std_logic_vector( resize( signed(IR(5 downto 0)), opB'length ) );
-					opA <=  DataB;
-					addC <= addA;
+					opA <=  DataA;
+					addC <= addB;
 					op <= '1';
 					state <= 7;
 				
