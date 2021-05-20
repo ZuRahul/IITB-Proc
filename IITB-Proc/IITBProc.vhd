@@ -110,26 +110,38 @@ begin
 				elsif (state=3) then --I
 					addA <= IR(11 downto 9);
 					addB <= IR(8 downto 6);
-					if (IR(15 downto 14)="00") then
+					if (IR(15 downto 12)="0001") then
 						state <= 8;	--Add Immediate
-					elsif (IR(15 downto 14)="01") then
-						state <= 9;
+					elsif (IR(15 downto 13)="010") then
+						state <= 9;	--Load/Store
+					elsif (IR(15 downto 12)="1100") then
+						state <= 17; --Branch Equality
+					elsif (IR(15 downto 12)="1001") then
+						state <= 13; --Jump and Link to Register
 					else
-						state <= 17;
+						state <= 0;
 					end if;
 				
 				
 				elsif (state=4) then --J
 					addA <= IR(11 downto 9);
 					addB <= "000";
-					if (IR(14)='0') then
-						state <= 18;
-					elsif (IR(12)='1') then
+					if (IR(15 downto 12)="0011") then
+						PC <= ALUout;
+						state <= 18; --LHI
+					elsif (IR(15 downto 12)="0111") then
+						PC <= ALUout;
 						state <= 19; --SA
-					else
+					elsif (IR(15 downto 12)="0110") then
+						PC <= ALUout;
 						state <= 27; --LA
+					elsif (IR(15 downto 12)="1000") then
+						state <= 13; --JAL
+					else
+						PC <= ALUout;
+						state <= 0;
 					end if;
-					PC <= ALUout;
+					
 				
 				elsif (state=5) then --Add
 					opA <= DataA;
@@ -163,42 +175,45 @@ begin
 				elsif (state=9) then --Load/Store
 					PC <= ALUout;
 					opB <= std_logic_vector( resize( signed(IR(5 downto 0)), opB'length ) );
-					opA <= DataA;
+					opA <= DataB;
 					op <= '1';
 					if (IR(12)='1') then
-						state <= 11;
+						state <= 11;	--SW
 					else
-						state <= 10;
+						state <= 10;	--LW
 					end if;
 				
 				
-				elsif (state=10) then
+				elsif (state=10) then	--LW
 					MemAddr <= ALUout;
 					state <= 12;
 				
-				elsif (state=11) then
+				elsif (state=11) then	--SW
 					MemAddr <= ALUout;
-					MemDataIn <= DataB;
+					MemDataIn <= DataA;
 					MemWR <= '1';
 					state <= 0;
 				
-				elsif (state=12) then
+				elsif (state=12) then	--Upate Load
 					DataC <= MemDataOut;
-					addC <= addB;
+					addC <= addA;
 					RegWR <= '1';
 					state <= 0;
 					
-				elsif (state=13) then
+				elsif (state=13) then	--JAL/JLR
 					addC <= addA;
 					DataC <= PC;
 					RegWR <= '1';
 					if (IR(12)='1') then
-						state <= 16;
+						state <= 16;	--JLR
 					else
-						state <= 15;
+						op <= '1';
+						opA <= PC;
+						opB <= std_logic_vector( resize( signed(IR(8 downto 0)), opB'length ) );
+						state <= 15;	--JAL
 					end if;
 				
-				elsif (state=14) then
+				elsif (state=14) then	--BEQ
 					if (DataA=DataB) then
 						PC <= ALUout;
 					else
@@ -206,22 +221,19 @@ begin
 					end if;
 					state <= 0;
 					
-				elsif (state=15) then
+				elsif (state=15) then	--JAL
 					PC <= ALUout;
 					state <= 0;
 				
-				elsif (state=16) then
+				elsif (state=16) then	--JLR
 					PC <= DataB;
 					state <= 0;
 				
-				elsif (state=17) then
+				elsif (state=17) then	--BEQ
 					opA <= PC;
 					opB <= std_logic_vector( resize( signed(IR(5 downto 0)), opB'length ) );
-					if (IR(14)='1') then
-						state <= 14;
-					else
-						state <= 13;
-					end if;
+					op <= '1';
+					state <= 14;
 				
 				elsif (state=18) then
 					DataC(15 downto 7) <= IR(8 downto 0);

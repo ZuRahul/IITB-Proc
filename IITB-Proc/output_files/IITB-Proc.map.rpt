@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-Proc
-Thu May 20 22:12:09 2021
+Thu May 20 23:34:42 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,12 +44,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu May 20 22:12:09 2021       ;
+; Analysis & Synthesis Status ; Successful - Thu May 20 23:34:42 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-Proc                                   ;
 ; Top-level Entity Name       ; IITBProc                                    ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 17,339                                      ;
+; Total logic elements        ; 17,407                                      ;
 ; Total pins                  ; 147                                         ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
@@ -160,24 +160,24 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Total logic elements                        ; 17339      ;
-;     -- Combinational with no register       ; 17204      ;
+; Total logic elements                        ; 17407      ;
+;     -- Combinational with no register       ; 17272      ;
 ;     -- Register only                        ; 20         ;
 ;     -- Combinational with a register        ; 115        ;
 ;                                             ;            ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 6898       ;
-;     -- 3 input functions                    ; 10359      ;
-;     -- 2 input functions                    ; 61         ;
+;     -- 4 input functions                    ; 6980       ;
+;     -- 3 input functions                    ; 10361      ;
+;     -- 2 input functions                    ; 45         ;
 ;     -- 1 input functions                    ; 1          ;
 ;     -- 0 input functions                    ; 0          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 17301      ;
+;     -- normal mode                          ; 17369      ;
 ;     -- arithmetic mode                      ; 38         ;
 ;     -- qfbk mode                            ; 0          ;
 ;     -- register cascade mode                ; 0          ;
-;     -- synchronous clear/load mode          ; 57         ;
+;     -- synchronous clear/load mode          ; 47         ;
 ;     -- asynchronous clear/load mode         ; 0          ;
 ;                                             ;            ;
 ; Total registers                             ; 135        ;
@@ -185,7 +185,7 @@ https://fpgasoftware.intel.com/eula.
 ; I/O pins                                    ; 147        ;
 ; Maximum fan-out node                        ; MemAddr[0] ;
 ; Maximum fan-out                             ; 1589       ;
-; Total fan-out                               ; 59311      ;
+; Total fan-out                               ; 59593      ;
 ; Average fan-out                             ; 3.39       ;
 +---------------------------------------------+------------+
 
@@ -195,10 +195,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node  ; Logic Cells   ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs  ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
-; |IITBProc                   ; 17339 (984)   ; 135          ; 0          ; 147  ; 0            ; 17204 (849)   ; 20 (20)           ; 115 (115)        ; 41 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
+; |IITBProc                   ; 17407 (1036)  ; 135          ; 0          ; 147  ; 0            ; 17272 (901)   ; 20 (20)           ; 115 (115)        ; 41 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
 ;    |ALU:Arithmetic|         ; 32 (32)       ; 0            ; 0          ; 0    ; 0            ; 32 (32)       ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |IITBProc|ALU:Arithmetic         ; ALU          ; work         ;
 ;    |Memory:RAM|             ; 16043 (16043) ; 0            ; 0          ; 0    ; 0            ; 16043 (16043) ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|Memory:RAM             ; Memory       ; work         ;
-;    |RegisterFile:Registers| ; 280 (280)     ; 0            ; 0          ; 0    ; 0            ; 280 (280)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|RegisterFile:Registers ; RegisterFile ; work         ;
+;    |RegisterFile:Registers| ; 296 (296)     ; 0            ; 0          ; 0    ; 0            ; 296 (296)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|RegisterFile:Registers ; RegisterFile ; work         ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -330,7 +330,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Total registers                              ; 135   ;
 ; Number of registers using Synchronous Clear  ; 1     ;
-; Number of registers using Synchronous Load   ; 56    ;
+; Number of registers using Synchronous Load   ; 46    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 124   ;
@@ -343,18 +343,19 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |IITBProc|MemDataIn[6]                 ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |IITBProc|MemDataIn[8]                 ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |IITBProc|addB[0]                      ;
-; 35:1               ; 7 bits    ; 161 LEs       ; 14 LEs               ; 147 LEs                ; Yes        ; |IITBProc|DataC[5]                     ;
-; 35:1               ; 9 bits    ; 207 LEs       ; 18 LEs               ; 189 LEs                ; Yes        ; |IITBProc|DataC[11]                    ;
-; 21:1               ; 5 bits    ; 70 LEs        ; 10 LEs               ; 60 LEs                 ; Yes        ; |IITBProc|opB[1]                       ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |IITBProc|PC[9]                        ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |IITBProc|MemAddr[5]                   ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 32 LEs               ; 144 LEs                ; Yes        ; |IITBProc|opA[1]                       ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |IITBProc|addC[1]                      ;
-; 18:1               ; 11 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |IITBProc|opB[14]                      ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux16 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux15 ;
+; 64:1               ; 7 bits    ; 294 LEs       ; 14 LEs               ; 280 LEs                ; Yes        ; |IITBProc|DataC[6]                     ;
+; 64:1               ; 6 bits    ; 252 LEs       ; 12 LEs               ; 240 LEs                ; Yes        ; |IITBProc|DataC[15]                    ;
+; 35:1               ; 3 bits    ; 69 LEs        ; 6 LEs                ; 63 LEs                 ; Yes        ; |IITBProc|DataC[10]                    ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |IITBProc|PC[14]                       ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |IITBProc|MemAddr[7]                   ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |IITBProc|addC[0]                      ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |IITBProc|opB[5]                       ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 30 LEs               ; 50 LEs                 ; Yes        ; |IITBProc|opB[15]                      ;
+; 15:1               ; 16 bits   ; 160 LEs       ; 48 LEs               ; 112 LEs                ; Yes        ; |IITBProc|opA[1]                       ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux25 ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux12 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -364,7 +365,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu May 20 22:11:52 2021
+    Info: Processing started: Thu May 20 23:34:25 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-Proc -c IITB-Proc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -531,13 +532,13 @@ Info (10041): Inferred latch for "store[0][13]" at RegisterFile.vhd(26) File: /h
 Info (10041): Inferred latch for "store[0][14]" at RegisterFile.vhd(26) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 26
 Info (10041): Inferred latch for "store[0][15]" at RegisterFile.vhd(26) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 26
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 17486 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 17554 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 129 output pins
-    Info (21061): Implemented 17339 logic cells
+    Info (21061): Implemented 17407 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 424 megabytes
-    Info: Processing ended: Thu May 20 22:12:09 2021
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Thu May 20 23:34:42 2021
     Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:32
 
