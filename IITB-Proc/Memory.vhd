@@ -12,7 +12,7 @@ end entity;
 
 architecture arch of Memory is
 
-type d2 is array (0 to 600-1) of std_logic_vector (15 downto 0);	--type for file
+type d2 is array (0 to 1024-1) of std_logic_vector (15 downto 0);	--type for file
 signal store: d2;	--file
 
 begin

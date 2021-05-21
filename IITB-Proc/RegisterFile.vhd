@@ -15,7 +15,6 @@ entity RegisterFile is
 		dataA: out std_logic_vector(15 downto 0);
 		dataB: out std_logic_vector(15 downto 0);
 		flag: out std_logic_vector(1 downto 0);
-		flags: out flg;
 		Interface: out d2);
 end entity;
 
@@ -27,7 +26,6 @@ signal flgs: flg;
 
 begin
 	Interface <= store;
-	flags <= flgs;
 	process(WR,dataC,addA,addB,addC)
 		variable addr: natural range 0 to 7;
 	begin

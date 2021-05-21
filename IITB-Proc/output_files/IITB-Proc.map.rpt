@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-Proc
-Fri May 21 13:01:30 2021
+Fri May 21 18:55:30 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri May 21 13:01:30 2021       ;
+; Analysis & Synthesis Status ; Successful - Fri May 21 18:55:30 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-Proc                                   ;
 ; Top-level Entity Name       ; IITBProc                                    ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 17,465                                      ;
-; Total pins                  ; 163                                         ;
+; Total logic elements        ; 29,189                                      ;
+; Total pins                  ; 147                                         ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -160,20 +160,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Total logic elements                        ; 17465      ;
-;     -- Combinational with no register       ; 17328      ;
+; Total logic elements                        ; 29189      ;
+;     -- Combinational with no register       ; 29052      ;
 ;     -- Register only                        ; 20         ;
 ;     -- Combinational with a register        ; 117        ;
 ;                                             ;            ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 7001       ;
-;     -- 3 input functions                    ; 10379      ;
-;     -- 2 input functions                    ; 63         ;
+;     -- 4 input functions                    ; 11422      ;
+;     -- 3 input functions                    ; 17701      ;
+;     -- 2 input functions                    ; 44         ;
 ;     -- 1 input functions                    ; 2          ;
 ;     -- 0 input functions                    ; 0          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 17426      ;
+;     -- normal mode                          ; 29150      ;
 ;     -- arithmetic mode                      ; 39         ;
 ;     -- qfbk mode                            ; 0          ;
 ;     -- register cascade mode                ; 0          ;
@@ -182,10 +182,10 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;            ;
 ; Total registers                             ; 137        ;
 ; Total logic cells in carry chains           ; 42         ;
-; I/O pins                                    ; 163        ;
-; Maximum fan-out node                        ; MemAddr[0] ;
-; Maximum fan-out                             ; 1589       ;
-; Total fan-out                               ; 59787      ;
+; I/O pins                                    ; 147        ;
+; Maximum fan-out node                        ; MemAddr[7] ;
+; Maximum fan-out                             ; 2065       ;
+; Total fan-out                               ; 99383      ;
 ; Average fan-out                             ; 3.39       ;
 +---------------------------------------------+------------+
 
@@ -195,121 +195,121 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node  ; Logic Cells   ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs  ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
-; |IITBProc                   ; 17465 (1069)  ; 137          ; 0          ; 163  ; 0            ; 17328 (932)   ; 20 (20)           ; 117 (117)        ; 42 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
+; |IITBProc                   ; 29189 (1508)  ; 137          ; 0          ; 147  ; 0            ; 29052 (1371)  ; 20 (20)           ; 117 (117)        ; 42 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
 ;    |ALU:Arithmetic|         ; 33 (33)       ; 0            ; 0          ; 0    ; 0            ; 33 (33)       ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |IITBProc|ALU:Arithmetic         ; ALU          ; work         ;
-;    |Memory:RAM|             ; 16043 (16043) ; 0            ; 0          ; 0    ; 0            ; 16043 (16043) ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|Memory:RAM             ; Memory       ; work         ;
+;    |Memory:RAM|             ; 27328 (27328) ; 0            ; 0          ; 0    ; 0            ; 27328 (27328) ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|Memory:RAM             ; Memory       ; work         ;
 ;    |RegisterFile:Registers| ; 320 (320)     ; 0            ; 0          ; 0    ; 0            ; 320 (320)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|RegisterFile:Registers ; RegisterFile ; work         ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                              ;
-+-------------------------------------------------------+---------------------------------+------------------------+
-; Latch Name                                            ; Latch Enable Signal             ; Free of Timing Hazards ;
-+-------------------------------------------------------+---------------------------------+------------------------+
-; RegisterFile:Registers|store[7][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][4]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][5]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][6]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][7]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][8]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][9]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][10]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][11]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][12]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][13]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][14]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[7][15]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][4]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][5]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][6]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][7]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][8]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][9]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][10]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][11]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][12]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][13]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][14]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[6][15]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][4]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][5]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][6]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][7]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][8]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][9]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][10]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][11]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][12]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][13]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][14]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[5][15]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][4]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][5]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][6]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][7]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][8]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][9]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][10]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][11]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][12]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][13]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][14]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[4][15]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][4]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][5]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][6]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][7]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][8]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][9]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][10]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][11]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][12]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][13]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][14]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[3][15]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][4]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][5]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][6]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][7]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][8]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][9]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][10]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][11]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][12]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][13]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][14]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[2][15]                   ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[1][0]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[1][1]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[1][2]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; RegisterFile:Registers|store[1][3]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
-; Number of user-specified and inferred latches = 9744  ;                                 ;                        ;
-+-------------------------------------------------------+---------------------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++--------------------------------------------------------+---------------------------------+------------------------+
+; Latch Name                                             ; Latch Enable Signal             ; Free of Timing Hazards ;
++--------------------------------------------------------+---------------------------------+------------------------+
+; RegisterFile:Registers|store[7][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][4]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][5]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][6]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][7]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][8]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][9]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][10]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][11]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][12]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][13]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][14]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[7][15]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][4]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][5]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][6]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][7]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][8]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][9]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][10]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][11]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][12]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][13]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][14]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[6][15]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][4]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][5]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][6]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][7]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][8]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][9]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][10]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][11]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][12]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][13]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][14]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[5][15]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][4]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][5]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][6]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][7]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][8]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][9]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][10]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][11]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][12]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][13]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][14]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[4][15]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][4]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][5]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][6]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][7]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][8]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][9]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][10]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][11]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][12]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][13]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][14]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[3][15]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][4]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][5]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][6]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][7]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][8]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][9]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][10]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][11]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][12]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][13]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][14]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[2][15]                    ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[1][0]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[1][1]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[1][2]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; RegisterFile:Registers|store[1][3]                     ; RegisterFile:Registers|Decoder0 ; yes                    ;
+; Number of user-specified and inferred latches = 16528  ;                                 ;                        ;
++--------------------------------------------------------+---------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -347,15 +347,15 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |IITBProc|addB[0]                      ;
 ; 64:1               ; 7 bits    ; 294 LEs       ; 14 LEs               ; 280 LEs                ; Yes        ; |IITBProc|DataC[6]                     ;
 ; 64:1               ; 7 bits    ; 294 LEs       ; 14 LEs               ; 280 LEs                ; Yes        ; |IITBProc|flagUPD[0]                   ;
-; 35:1               ; 3 bits    ; 69 LEs        ; 6 LEs                ; 63 LEs                 ; Yes        ; |IITBProc|DataC[10]                    ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |IITBProc|PC[14]                       ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |IITBProc|MemAddr[6]                   ;
-; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |IITBProc|addC[1]                      ;
+; 35:1               ; 3 bits    ; 69 LEs        ; 6 LEs                ; 63 LEs                 ; Yes        ; |IITBProc|DataC[11]                    ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |IITBProc|MemAddr[3]                   ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |IITBProc|PC[2]                        ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |IITBProc|addC[2]                      ;
 ; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |IITBProc|opB[5]                       ;
-; 12:1               ; 10 bits   ; 80 LEs        ; 30 LEs               ; 50 LEs                 ; Yes        ; |IITBProc|opB[15]                      ;
-; 15:1               ; 16 bits   ; 160 LEs       ; 48 LEs               ; 112 LEs                ; Yes        ; |IITBProc|opA[2]                       ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 30 LEs               ; 50 LEs                 ; Yes        ; |IITBProc|opB[6]                       ;
+; 15:1               ; 16 bits   ; 160 LEs       ; 48 LEs               ; 112 LEs                ; Yes        ; |IITBProc|opA[9]                       ;
 ; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux31 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux5  ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux15 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -365,12 +365,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri May 21 13:01:13 2021
+    Info: Processing started: Fri May 21 18:55:03 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-Proc -c IITB-Proc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file RegisterFile.vhd
-    Info (12022): Found design unit 1: RegisterFile-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 22
+    Info (12022): Found design unit 1: RegisterFile-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 21
     Info (12023): Found entity 1: RegisterFile File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file Memory.vhd
     Info (12022): Found design unit 1: Memory-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd Line: 13
@@ -379,7 +379,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
     Info (12022): Found design unit 1: ALU-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd Line: 14
     Info (12023): Found entity 1: ALU File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file IITBProc.vhd
-    Info (12022): Found design unit 1: IITBProc-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 16
+    Info (12022): Found design unit 1: IITBProc-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 15
     Info (12023): Found entity 1: IITBProc File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file RFTest.vhd
     Info (12022): Found design unit 1: RFTest-arch File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RFTest.vhd Line: 16
@@ -396,169 +396,152 @@ Info (12021): Found 2 design units, including 1 entities, in source file LoadTes
 Info (12021): Found 1 design units, including 0 entities, in source file utilities.vhd
     Info (12022): Found design unit 1: utilities File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/utilities.vhd Line: 6
 Info (12127): Elaborating entity "IITBProc" for the top level hierarchy
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 59
-Info (12128): Elaborating entity "Memory" for hierarchy "Memory:RAM" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 62
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 57
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:RAM" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 60
 Warning (10492): VHDL Process Statement warning at Memory.vhd(23): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd Line: 23
-Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Registers" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(35): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 35
-Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(36): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 36
-Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(37): signal "flgs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(40): signal "flagUPD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 40
-Warning (10631): VHDL Process Statement warning at RegisterFile.vhd(31): inferring latch(es) for signal or variable "store", which holds its previous value in one or more paths through the process File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Warning (10631): VHDL Process Statement warning at RegisterFile.vhd(31): inferring latch(es) for signal or variable "flgs", which holds its previous value in one or more paths through the process File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[7][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[7][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[6][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[6][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[5][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[5][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[4][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[4][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[3][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[3][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[2][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[2][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[1][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[1][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[0][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "flgs[0][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[7][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[6][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[5][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[4][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[3][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[2][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[1][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][0]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][1]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][2]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][3]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][4]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][5]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][6]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][7]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][8]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][9]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][10]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][11]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][12]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][13]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
-Info (10041): Inferred latch for "store[0][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
+Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:Registers" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(33): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(34): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(35): signal "flgs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at RegisterFile.vhd(38): signal "flagUPD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 38
+Warning (10631): VHDL Process Statement warning at RegisterFile.vhd(29): inferring latch(es) for signal or variable "store", which holds its previous value in one or more paths through the process File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[7][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[6][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[5][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[4][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[3][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[2][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[1][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][0]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][1]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][2]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][3]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][4]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][5]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][6]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][7]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][8]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][9]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][10]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][11]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][12]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][13]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][14]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
+Info (10041): Inferred latch for "store[0][15]" at RegisterFile.vhd(29) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 29
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 17628 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 29336 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 145 output pins
-    Info (21061): Implemented 17465 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 424 megabytes
-    Info: Processing ended: Fri May 21 13:01:31 2021
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:32
+    Info (21059): Implemented 129 output pins
+    Info (21061): Implemented 29189 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 436 megabytes
+    Info: Processing ended: Fri May 21 18:55:30 2021
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:42
 
 

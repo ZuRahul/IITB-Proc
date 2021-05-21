@@ -8,8 +8,7 @@ entity IITBProc is
 	port( 
 		clk, load: in std_logic;
 		DataIn: in std_logic_vector(15 downto 0);
-		Interface: out d2; 
-		flags: out flg;
+		Interface: out d2;
 		Trap: out std_logic := '0');
 end entity;
 
@@ -26,7 +25,6 @@ component RegisterFile is
 		dataA: out std_logic_vector(15 downto 0);
 		dataB: out std_logic_vector(15 downto 0);
 		flag: out std_logic_vector(1 downto 0);
-		flags: out flg;
 		Interface: out d2 );
 end component;
 
@@ -63,7 +61,7 @@ begin
 		port map (MemWR,MemAddr,MemDataIn,MemDataOut);
 	
 	Registers: RegisterFile
-		port map (RegWR,addA,addB,addC,DataC,flagUPD,DataA,DataB,flag,flags,Interface);
+		port map (RegWR,addA,addB,addC,DataC,flagUPD,DataA,DataB,flag,Interface);
 
 	process(clk)
 		variable loadAddr: std_logic_vector(15 downto 0) := "0000000000000000";
@@ -78,17 +76,17 @@ begin
 				loadAddr := std_logic_vector( to_signed( to_integer(signed(loadAddr)) + 1, loadAddr'length ) );
 			else
 			
-				if (state=0) then
+				if (state=0) then	--Fetch
 					MemWR <= '0';
 					RegWR <= '0';
 					MemAddr <= PC;
 					op <= '1';
 					opA <= "0000000000000001";
 					opB <= PC;
-					state <= 1;
+					state <= 1;	--Understand
 				
 				
-				elsif (state=1) then
+				elsif (state=1) then	--Understand
 					IR <= MemDataOut;
 					if (MemDataOut(15 downto 12)="0000") or (MemDataOut(15 downto 12)="0010") then
 						state <= 2; --R
@@ -125,7 +123,8 @@ begin
 					elsif (IR(15 downto 12)="1001") then
 						state <= 13; --Jump and Link to Register
 					else
-						state <= 0;
+						PC <= ALUout; --Erroneous Instruction
+						state <= 0;		--Skip
 					end if;
 				
 				
@@ -141,11 +140,8 @@ begin
 					elsif (IR(15 downto 12)="0110") then
 						PC <= ALUout;
 						state <= 27; --LA
-					elsif (IR(15 downto 12)="1000") then
-						state <= 13; --JAL
 					else
-						PC <= ALUout;
-						state <= 0;
+						state <= 13; --JAL
 					end if;
 					
 				
@@ -155,18 +151,18 @@ begin
 					op <= '1';
 					if (IR(1)='1') then
 						if (flag(1)='1') then
-							state <= 7;
+							state <= 7;	--Update
 						else
-							state <= 0;
+							state <= 0;	--Fetch
 						end if;
 					elsif (IR(0)='1') then
 						if (flag(0)='1') then
-							state <= 7;
+							state <= 7;	--Update
 						else
-							state <= 0;
+							state <= 0;	--Fetch
 						end if;
 					else
-						state <= 7;
+						state <= 7;	--Update
 					end if;
 					
 					
@@ -176,18 +172,18 @@ begin
 					op <= '0';
 					if (IR(1)='1') then
 						if (flag(1)='1') then
-							state <= 7;
+							state <= 7;	--Update
 						else
-							state <= 0;
+							state <= 0;	--Fetch
 						end if;
 					elsif (IR(0)='1') then
 						if (flag(0)='1') then
-							state <= 7;
+							state <= 7;	--Update
 						else
-							state <= 0;
+							state <= 0;	--Fetch
 						end if;
 					else
-						state <= 7;
+						state <= 7;	--Update
 					end if;
 				
 				
@@ -200,7 +196,7 @@ begin
 					else
 						flagUPD(0) <= '0';
 					end if;
-					state <= 0;
+					state <= 0;	--Fetch
 				
 				
 				elsif (state=8) then --Add Immediate
@@ -209,7 +205,7 @@ begin
 					opA <=  DataA;
 					addC <= addB;
 					op <= '1';
-					state <= 7;
+					state <= 7;	--Update
 				
 				
 				elsif (state=9) then --Load/Store
@@ -226,7 +222,7 @@ begin
 				
 				elsif (state=10) then	--LW
 					MemAddr <= ALUout;
-					state <= 12;
+					state <= 12;	--Update Load
 				
 				elsif (state=11) then	--SW
 					MemAddr <= ALUout;
@@ -244,7 +240,7 @@ begin
 						flagUPD(0) <= '0';
 					end if;
 					RegWR <= '1';
-					state <= 0;
+					state <= 0;	--Fetch
 					
 				elsif (state=13) then	--JAL/JLR
 					addC <= addA;
@@ -271,21 +267,21 @@ begin
 					else
 						PC <= std_logic_vector(to_unsigned(to_integer(unsigned(PC))+1, PC'length));
 					end if;
-					state <= 0;
+					state <= 0;	--Fetch
 					
 				elsif (state=15) then	--JAL
 					PC <= ALUout;
-					state <= 0;
+					state <= 0;	--Fetch
 				
 				elsif (state=16) then	--JLR
 					PC <= DataB;
-					state <= 0;
+					state <= 0;	--Fetch
 				
-				elsif (state=17) then	--BEQ
+				elsif (state=17) then	--BEQ/JLR
 					opA <= PC;
 					opB <= std_logic_vector( resize( signed(IR(5 downto 0)), opB'length ) );
 					op <= '1';
-					state <= 14;
+					state <= 14;	--BEQ
 				
 				elsif (state=18) then	--LHI
 					DataC(15 downto 7) <= IR(8 downto 0);
@@ -297,7 +293,7 @@ begin
 						flagUPD <= "00";
 					end if;
 					RegWR <= '1';
-					state <= 0;
+					state <= 0;	--Fetch
 				
 				elsif (state=19) then	--SA
 					opA <= DataA;
@@ -306,16 +302,16 @@ begin
 					MemAddr <= DataA;
 					MemDataIn <= DataB;
 					MemWR <= '1';
-					state <= 20;
+					state <= 20;	--SA
 					addB <= "001";
 				
-				elsif (state < 27) then
+				elsif (state < 27) then	--SA
 					addB <= std_logic_vector(to_unsigned(to_integer(unsigned(addB))+1, addB'length));
 					MemAddr <= ALUout;
 					MemDataIn <= DataB;
 					opA <= ALUout;
 					if (state=26) then
-						state <= 0;
+						state <= 0;	--Fetch
 					else
 						state <= state+1;
 					end if;
@@ -327,9 +323,9 @@ begin
 					MemWR <= '0';
 					addC <= "111";
 					MemAddr <= DataA;
-					state <= 28;
+					state <= 28;	--LA
 				
-				elsif (state<36) then
+				elsif (state<36) then	--LA
 					opA <= ALUout;
 					addC <= std_logic_vector(to_unsigned(to_integer(unsigned(addC))+1, addC'length));
 					DataC <= MemDataOut;
@@ -341,7 +337,7 @@ begin
 					MemAddr <= ALUout;
 					RegWR <= '1';
 					if (state=35) then
-						state <= 0;
+						state <= 0;	--Fetch
 					else
 						state <= state+1;
 					end if;
