@@ -235,7 +235,7 @@ begin
 					op <= '1';
 					state <= 14;
 				
-				elsif (state=18) then
+				elsif (state=18) then	--LHI
 					DataC(15 downto 7) <= IR(8 downto 0);
 					DataC(6 downto 0) <= "0000000";
 					addC <= addA;
