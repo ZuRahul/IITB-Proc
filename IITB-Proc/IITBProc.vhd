@@ -153,14 +153,42 @@ begin
 					opA <= DataA;
 					opB <= DataB;
 					op <= '1';
-					state <= 7;
+					if (IR(1)='1') then
+						if (flag(1)='1') then
+							state <= 7;
+						else
+							state <= 0;
+						end if;
+					elsif (IR(0)='1') then
+						if (flag(0)='1') then
+							state <= 7;
+						else
+							state <= 0;
+						end if;
+					else
+						state <= 7;
+					end if;
 					
 					
 				elsif (state=6) then --Nand
 					opA <= DataA;
 					opB <= DataB;
 					op <= '0';
-					state <= 7;
+					if (IR(1)='1') then
+						if (flag(1)='1') then
+							state <= 7;
+						else
+							state <= 0;
+						end if;
+					elsif (IR(0)='1') then
+						if (flag(0)='1') then
+							state <= 7;
+						else
+							state <= 0;
+						end if;
+					else
+						state <= 7;
+					end if;
 				
 				
 				elsif (state=7) then --ALU Update

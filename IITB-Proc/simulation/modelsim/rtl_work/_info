@@ -24,9 +24,9 @@ VjL6==G:1zOL^ndLeZ10932
 !s100 5SDi8bgf4`Io9PLV:>QUz1
 Z7 OV;C;2020.1;71
 31
-Z8 !s110 1621581410
+Z8 !s110 1621582510
 !i10b 1
-Z9 !s108 1621581409.000000
+Z9 !s108 1621582510.000000
 Z10 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd|
 Z11 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/ALU.vhd|
 !i113 1
@@ -53,7 +53,7 @@ R11
 R12
 R13
 Eiitbproc
-Z14 w1621577549
+Z14 w1621582270
 Z15 DPx4 work 9 utilities 0 22 iAQ6?QRY8GDLjSP?j3W>K3
 R2
 R3
@@ -70,9 +70,9 @@ R7
 31
 R8
 !i10b 1
-Z18 !s108 1621581410.000000
-Z19 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd|
-Z20 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd|
+R9
+Z18 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd|
+Z19 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd|
 !i113 1
 R12
 R13
@@ -84,39 +84,39 @@ R4
 DEx4 work 8 iitbproc 0 22 NKR92:WZ0cP;@HHOY@@kB3
 !i122 4
 l57
-L16 316
-VANjTKO^]ZKglT`EcgiC^X2
-!s100 @M[Z;7KjVI4VX]>e8Abn41
+L16 344
+V7>JC1fnNZ]ZNI8D^S]dzb3
+!s100 an<cO0m1_Nbf=HQ5zWnKK1
 R7
 31
 R8
 !i10b 1
+R9
 R18
 R19
-R20
 !i113 1
 R12
 R13
 Ememory
-Z21 w1621526450
+Z20 w1621526450
 R2
 R3
 R4
 !i122 0
 R0
-Z22 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd
-Z23 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd
+Z21 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd
+Z22 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd
 l0
 L5 1
 Ve=0:eaAWVh6e7hhRnmL:72
 !s100 =YN0HdUS]BF]Cf2YVI@zV2
 R7
 31
-Z24 !s110 1621581409
+R8
 !i10b 1
 R9
-Z25 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd|
-Z26 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd|
+Z23 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd|
+Z24 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd|
 !i113 1
 R12
 R13
@@ -132,24 +132,24 @@ V=k3R?eg>YdFzUz2G7dGb02
 !s100 ]<4AA7U3P0L`6AaP<1Mmf3
 R7
 31
-R24
+R8
 !i10b 1
 R9
-R25
-R26
+R23
+R24
 !i113 1
 R12
 R13
 Eregisterfile
-Z27 w1621572124
+Z25 w1621572124
 R15
 R2
 R3
 R4
 !i122 3
 R0
-Z28 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd
-Z29 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd
+Z26 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd
+Z27 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd
 l0
 L7 1
 VE>b?WE0zie[8hRTGbUjW>2
@@ -158,9 +158,9 @@ R7
 31
 R8
 !i10b 1
-R18
-Z30 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd|
-Z31 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd|
+R9
+Z28 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd|
+Z29 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd|
 !i113 1
 R12
 R13
@@ -179,33 +179,33 @@ R7
 31
 R8
 !i10b 1
-R18
-R30
-R31
+R9
+R28
+R29
 !i113 1
 R12
 R13
 Etestbench
-Z32 w1621581401
+Z30 w1621582498
 R2
 R15
-Z33 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z31 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R3
 R4
 !i122 5
 R0
-Z34 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd
-Z35 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd
+Z32 8/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd
+Z33 F/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd
 l0
 L8 1
 V=2d?X2]JU^RLZUZR_Ll]L2
 !s100 M1J>TXchm`?2z0ZW>25fd3
 R7
 31
-R8
+Z34 !s110 1621582511
 !i10b 1
-R18
-Z36 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd|
+R9
+Z35 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd|
 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd|
 !i113 1
 R12
@@ -213,22 +213,22 @@ R13
 Abehaviour
 R2
 R15
-R33
+R31
 R3
 R4
 DEx4 work 9 testbench 0 22 =2d?X2]JU^RLZUZR_Ll]L2
 !i122 5
 l27
 L11 65
-V;CSUe[7m[RfEJf9O1[Xak3
-!s100 HNMRaoj>8?M8MVb_B^=920
+V1mnAE:2LT4PAn5DCA>:Tg0
+!s100 KjMDN;;e<B1`7eh`Kd:EH1
 R7
 31
-R8
+R34
 !i10b 1
-R18
-R36
-Z37 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd|
+R9
+R35
+Z36 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/TESTBENCH.vhd|
 !i113 1
 R12
 R13
@@ -249,7 +249,7 @@ R7
 31
 R8
 !i10b 1
-R18
+R9
 !s90 -reportprogress|300|-93|-work|work|/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/utilities.vhd|
 !s107 /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/utilities.vhd|
 !i113 1

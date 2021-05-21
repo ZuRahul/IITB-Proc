@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IITB-Proc
-Fri May 21 12:44:51 2021
+Fri May 21 13:01:30 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -17,8 +17,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "RegisterFile:Registers"
- 13. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,12 +44,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri May 21 12:44:51 2021       ;
+; Analysis & Synthesis Status ; Successful - Fri May 21 13:01:30 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; IITB-Proc                                   ;
 ; Top-level Entity Name       ; IITBProc                                    ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 17,452                                      ;
+; Total logic elements        ; 17,465                                      ;
 ; Total pins                  ; 163                                         ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
@@ -161,20 +160,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Total logic elements                        ; 17452      ;
-;     -- Combinational with no register       ; 17315      ;
+; Total logic elements                        ; 17465      ;
+;     -- Combinational with no register       ; 17328      ;
 ;     -- Register only                        ; 20         ;
 ;     -- Combinational with a register        ; 117        ;
 ;                                             ;            ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 6992       ;
-;     -- 3 input functions                    ; 10378      ;
-;     -- 2 input functions                    ; 60         ;
+;     -- 4 input functions                    ; 7001       ;
+;     -- 3 input functions                    ; 10379      ;
+;     -- 2 input functions                    ; 63         ;
 ;     -- 1 input functions                    ; 2          ;
 ;     -- 0 input functions                    ; 0          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 17413      ;
+;     -- normal mode                          ; 17426      ;
 ;     -- arithmetic mode                      ; 39         ;
 ;     -- qfbk mode                            ; 0          ;
 ;     -- register cascade mode                ; 0          ;
@@ -186,7 +185,7 @@ https://fpgasoftware.intel.com/eula.
 ; I/O pins                                    ; 163        ;
 ; Maximum fan-out node                        ; MemAddr[0] ;
 ; Maximum fan-out                             ; 1589       ;
-; Total fan-out                               ; 59742      ;
+; Total fan-out                               ; 59787      ;
 ; Average fan-out                             ; 3.39       ;
 +---------------------------------------------+------------+
 
@@ -196,10 +195,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node  ; Logic Cells   ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs  ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
-; |IITBProc                   ; 17452 (1064)  ; 137          ; 0          ; 163  ; 0            ; 17315 (927)   ; 20 (20)           ; 117 (117)        ; 42 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
+; |IITBProc                   ; 17465 (1069)  ; 137          ; 0          ; 163  ; 0            ; 17328 (932)   ; 20 (20)           ; 117 (117)        ; 42 (25)         ; 0 (0)      ; |IITBProc                        ; IITBProc     ; work         ;
 ;    |ALU:Arithmetic|         ; 33 (33)       ; 0            ; 0          ; 0    ; 0            ; 33 (33)       ; 0 (0)             ; 0 (0)            ; 17 (17)         ; 0 (0)      ; |IITBProc|ALU:Arithmetic         ; ALU          ; work         ;
 ;    |Memory:RAM|             ; 16043 (16043) ; 0            ; 0          ; 0    ; 0            ; 16043 (16043) ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|Memory:RAM             ; Memory       ; work         ;
-;    |RegisterFile:Registers| ; 312 (312)     ; 0            ; 0          ; 0    ; 0            ; 312 (312)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|RegisterFile:Registers ; RegisterFile ; work         ;
+;    |RegisterFile:Registers| ; 320 (320)     ; 0            ; 0          ; 0    ; 0            ; 320 (320)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IITBProc|RegisterFile:Registers ; RegisterFile ; work         ;
 +-----------------------------+---------------+--------------+------------+------+--------------+---------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -355,18 +354,9 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |IITBProc|opB[5]                       ;
 ; 12:1               ; 10 bits   ; 80 LEs        ; 30 LEs               ; 50 LEs                 ; Yes        ; |IITBProc|opB[15]                      ;
 ; 15:1               ; 16 bits   ; 160 LEs       ; 48 LEs               ; 112 LEs                ; Yes        ; |IITBProc|opA[2]                       ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux25 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux12 ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux31 ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |IITBProc|RegisterFile:Registers|Mux5  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "RegisterFile:Registers"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; flag ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -375,7 +365,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri May 21 12:44:32 2021
+    Info: Processing started: Fri May 21 13:01:13 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB-Proc -c IITB-Proc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -406,7 +396,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file LoadTes
 Info (12021): Found 1 design units, including 0 entities, in source file utilities.vhd
     Info (12022): Found design unit 1: utilities File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/utilities.vhd Line: 6
 Info (12127): Elaborating entity "IITBProc" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at IITBProc.vhd(53): object "flag" assigned a value but never read File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 53
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Arithmetic" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 59
 Info (12128): Elaborating entity "Memory" for hierarchy "Memory:RAM" File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/IITBProc.vhd Line: 62
 Warning (10492): VHDL Process Statement warning at Memory.vhd(23): signal "store" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/Memory.vhd Line: 23
@@ -562,14 +551,14 @@ Info (10041): Inferred latch for "store[0][13]" at RegisterFile.vhd(31) File: /h
 Info (10041): Inferred latch for "store[0][14]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
 Info (10041): Inferred latch for "store[0][15]" at RegisterFile.vhd(31) File: /home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/IITB-Proc/RegisterFile.vhd Line: 31
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 17615 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 17628 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 145 output pins
-    Info (21061): Implemented 17452 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 425 megabytes
-    Info: Processing ended: Fri May 21 12:44:51 2021
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:36
+    Info (21061): Implemented 17465 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 424 megabytes
+    Info: Processing ended: Fri May 21 13:01:31 2021
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:32
 
 
