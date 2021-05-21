@@ -9,6 +9,7 @@ entity IITBProc is
 		clk, load: in std_logic;
 		DataIn: in std_logic_vector(15 downto 0);
 		Interface: out d2; 
+		flags: out flg;
 		Trap: out std_logic := '0');
 end entity;
 
@@ -21,8 +22,11 @@ component RegisterFile is
 		addB: in std_logic_vector(2 downto 0); 
 		addC: in std_logic_vector(2 downto 0); 
 		dataC: in std_logic_vector(15 downto 0); 
+		flagUPD: in std_logic_vector(1 downto 0);
 		dataA: out std_logic_vector(15 downto 0);
 		dataB: out std_logic_vector(15 downto 0);
+		flag: out std_logic_vector(1 downto 0);
+		flags: out flg;
 		Interface: out d2 );
 end component;
 
@@ -39,25 +43,27 @@ component ALU is
 		opA : in std_logic_vector(15 downto 0); 
 		opB : in std_logic_vector(15 downto 0);
 		op : in std_logic;
-		output : out std_logic_vector(15 downto 0));
+		output : out std_logic_vector(15 downto 0);
+		carry : out std_logic);
 end component;
 
 signal IR,PC,MemAddr,MemDataIn,MemDataOut,DataA,DataB,DataC,opA,opB,ALUout: std_logic_vector(15 downto 0) := "0000000000000000";
-signal MemWR,RegWR,op: std_logic;
+signal MemWR,RegWR,op,carry: std_logic;
 signal addA,addB,addC: std_logic_vector(2 downto 0) := "000";
+signal flagUPD,flag: std_logic_vector(1 downto 0);
 
 signal state: natural range 0 to 40;
 
 begin
 
 	Arithmetic: ALU
-		port map (opA,opB,op,ALUout);
+		port map (opA,opB,op,ALUout,carry);
 	
 	RAM: Memory
 		port map (MemWR,MemAddr,MemDataIn,MemDataOut);
 	
 	Registers: RegisterFile
-		port map (RegWR,addA,addB,addC,DataC,DataA,DataB,Interface);
+		port map (RegWR,addA,addB,addC,DataC,flagUPD,DataA,DataB,flag,flags,Interface);
 
 	process(clk)
 		variable loadAddr: std_logic_vector(15 downto 0) := "0000000000000000";
@@ -160,6 +166,12 @@ begin
 				elsif (state=7) then --ALU Update
 					RegWR <= '1';
 					DataC <= ALUout;
+					flagUPD(1) <= carry;
+					if (ALUout="0000000000000000") then
+						flagUPD(0) <= '1';
+					else
+						flagUPD(0) <= '0';
+					end if;
 					state <= 0;
 				
 				
@@ -197,12 +209,24 @@ begin
 				elsif (state=12) then	--Upate Load
 					DataC <= MemDataOut;
 					addC <= addA;
+					flagUPD(1) <= '0';
+					if (MemDataOut="0000000000000000") then
+						flagUPD(0) <= '1';
+					else
+						flagUPD(0) <= '0';
+					end if;
 					RegWR <= '1';
 					state <= 0;
 					
 				elsif (state=13) then	--JAL/JLR
 					addC <= addA;
 					DataC <= PC;
+					flagUPD(1) <= '0';
+					if (PC="0000000000000000") then
+						flagUPD(0) <= '1';
+					else
+						flagUPD(0) <= '0';
+					end if;
 					RegWR <= '1';
 					if (IR(12)='1') then
 						state <= 16;	--JLR
@@ -239,10 +263,15 @@ begin
 					DataC(15 downto 7) <= IR(8 downto 0);
 					DataC(6 downto 0) <= "0000000";
 					addC <= addA;
+					if (IR(8 downto 0)="000000000") then
+						flagUPD <= "01";
+					else
+						flagUPD <= "00";
+					end if;
 					RegWR <= '1';
 					state <= 0;
 				
-				elsif (state=19) then
+				elsif (state=19) then	--SA
 					opA <= DataA;
 					opB <= "0000000000000001";
 					op <= '1';
@@ -263,7 +292,7 @@ begin
 						state <= state+1;
 					end if;
 				
-				elsif (state=27) then
+				elsif (state=27) then	--LA
 					opA <= DataA;
 					opB <= "0000000000000001";
 					op <= '1';
@@ -276,6 +305,11 @@ begin
 					opA <= ALUout;
 					addC <= std_logic_vector(to_unsigned(to_integer(unsigned(addC))+1, addC'length));
 					DataC <= MemDataOut;
+					if (MemDataOut="0000000000000000") then
+						flagUPD <= "01";
+					else
+						flagUPD <= "00";
+					end if;
 					MemAddr <= ALUout;
 					RegWR <= '1';
 					if (state=35) then

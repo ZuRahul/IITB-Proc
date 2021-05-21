@@ -15,20 +15,22 @@ COMPONENT IITBProc is
 		clk, load: in std_logic;
 		DataIn: in std_logic_vector (15 downto 0);
 		Interface: out d2;
+		flags: out flg;
 		Trap: out std_logic);
 END COMPONENT;
 
 SIGNAL CLK, LOAD, TRAP: STD_LOGIC;
 SIGNAL DATAIN: STD_LOGIC_VECTOR (15 DOWNTO 0);
 SIGNAL INTERFACE: d2;
+SIGNAL FLAGS: flg;
 
 BEGIN
 
 	CPU_INST: IITBProc
-		PORT MAP (CLK, LOAD, DATAIN, INTERFACE, TRAP);
+		PORT MAP (CLK, LOAD, DATAIN, INTERFACE, FLAGS, TRAP);
 	
 	PROCESS
-		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/instructions/sa.txt";
+		FILE INPUT_FILE: TEXT OPEN READ_MODE IS "/home/burixzura/acads/CS 254/Project/GitHub/IITB-Proc/instructions/store.txt";
 		VARIABLE INPUT_LINE: LINE;
 		VARIABLE INPUT_VAR: STD_LOGIC_VECTOR (15 DOWNTO 0);
 		VARIABLE INIT: STD_LOGIC := '0';
